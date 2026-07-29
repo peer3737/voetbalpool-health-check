@@ -10,6 +10,7 @@ def lambda_handler(event, context):
     else:
         protocol = "https"
     response = requests.get(f"{protocol}://{FASTAPI_ENDPOINT}/health")
+    print(response.json())
     return response.json()
 
 
